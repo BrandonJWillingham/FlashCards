@@ -13,7 +13,7 @@ function Layout({data,setDeckInfo,deckInfo,setDeckNumber, setFlip, flip}) {
       <div className="container">
         <Switch>
           <Route exact path = "/">
-            <Decks data={data} setDeckNumber={setDeckNumber}/>
+            <Decks data={data} setDeckNumber={setDeckNumber} cards={deckInfo.cards}/>
           </Route>
           
           <Route path = "/decks/:deckId/study">
