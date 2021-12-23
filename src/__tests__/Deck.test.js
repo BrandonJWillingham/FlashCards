@@ -90,7 +90,6 @@ describe("Decks", () => {
 
     const titleElements = await screen.findAllByText("Mock Deck 3");
     expect(titleElements.length).toBeGreaterThanOrEqual(1);
-
     expect(screen.getByText("What has ears but cannot hear?")).toBeTruthy();
     expect(screen.getByText("A cornfield.")).toBeTruthy();
   });

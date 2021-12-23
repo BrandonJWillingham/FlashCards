@@ -1,20 +1,47 @@
 import React, {useEffect, useState} from "react";
-import {Link} from "react-router-dom"
-// import { useParams} from "react-router-dom";
-// import { readDeck } from "../utils/api";
+import {useParams,useHistory} from "react-router-dom"
+import { readDeck } from "../utils/api";
 import { Cards } from "./Cards";
 
-export default function Study({data,setFlip,flip}){
+export default function Study(){
 
+    const initialization = {
+        cards : [1,2]
+    }
+
+    const history = useHistory()
+    const {deckId} = useParams()
+    const [flip, setFlip] = useState(false)
+    const [deck,setDeck] = useState(initialization)
+
+    useEffect(() => {
+
+      
+
+        async function loadData(){
+            readDeck(deckId).then((response)=> setDeck(response))
+        }
+        loadData();
+        return ()=>{
+        }
+    }, [deckId])
     
-   
-
+    function handleAddCards(){
+        history.push(`/decks/${deckId}/cards/new`)
+    }
 
     return(
         <div>
-            <div><Link to={"/"}>Home </Link><Link>/ {data.name} </Link><Link>/ Study</Link></div>
-            <h2> Study: {data.name}</h2>
-            {data && <Cards data={data.cards} setFlip={setFlip} flip={flip}/>}
+            <div><a href={"/"}>Home </a><a>/ {deck.name} </a><a>/ Study</a></div>
+            <h2> <p>{deck.name}</p></h2>
+            {deck.cards.length >= 3? <Cards data={deck.cards} setFlip={setFlip} flip={flip}/> :(
+                <div>
+                    <h3>Not Enough Cards</h3>
+                    <p>you need atleast 3 cards to study. There are {deck.cards.length} in this deck</p>
+                    <button onClick={handleAddCards}>Add Cards</button>
+                </div>
+            ) }
+
         </div>
     )
 }

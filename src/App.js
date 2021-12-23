@@ -1,9 +1,7 @@
-import React from "react";
-import {useState, useEffect} from "react"
+import React, {useState, useEffect} from "react";
 import {Route} from "react-router-dom";
 import Layout from "./Layout";
-import {listDecks} from "./utils/api"
-import { readDeck } from "./utils/api";
+import {listDecks,readDeck } from "./utils/api"
 
 
 function App() {

@@ -32,7 +32,7 @@ export function Cards ({data, flip,setFlip}){
                 <div>
                     Card {index+1} of {data.length} 
                 </div>
-                {flip ? (<div>{card.front}</div>) :(<div>{card.back}</div>)} 
+                {flip ? (<div>{card.back}</div>) :(<div>{card.front}</div>)} 
                 <button onClick={()=>flipping()}>Flip</button>
                 {flip && <button onClick={()=> next() }>Next</button>}
             </div>
