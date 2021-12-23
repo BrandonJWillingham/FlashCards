@@ -11,7 +11,7 @@ import EditDeck from "./EditDeck";
 import AddCard from "./AddCard";
 
 
-function Layout({data,setDeckInfo,deckInfo,setDeckNumber, setFlip, flip}) {
+function Layout({data}) {
 
   return (
     <div >
@@ -20,11 +20,11 @@ function Layout({data,setDeckInfo,deckInfo,setDeckNumber, setFlip, flip}) {
 
         <Switch>
           <Route exact path = "/">
-            <Decks data={data} setDeckNumber={setDeckNumber} cards={deckInfo.cards}/>
+            <Decks data={data}/>
           </Route>
           
           <Route exact path = "/decks/:deckId/study">
-          <Study data={deckInfo} setData={setDeckInfo} setFlip={setFlip} flip={flip}/>
+          <Study />
           </Route>
 
           <Route exact path="/decks/new">

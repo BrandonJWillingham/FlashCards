@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom"
 import { deleteDeck } from "../utils/api";
 
 
-export default function Decks({data,setDeckNumber}){
+export default function Decks({data}){
     
     const history = useHistory();
 
@@ -12,7 +12,6 @@ export default function Decks({data,setDeckNumber}){
   const decks =  data.map((deck,index)=>{
         function Study(){
             history.push(`/decks/${deck.id}/study`)
-            setDeckNumber(deck.id)
         }
 
         function deleting(){

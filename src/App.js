@@ -24,7 +24,6 @@ function App() {
   useEffect(() => {
 
     async function loadData(){
-      console.log(deckNumber)
         readDeck(deckNumber).then((response)=> setDeckInfo(response))
     }
     loadData();
