@@ -19,5 +19,5 @@ anything you normally would with flashcards while being able to organize them in
 
 ### Creating Decks
 
-![](Images/Create Deck.png)
+![](Images/Create-Deck.png)
 
