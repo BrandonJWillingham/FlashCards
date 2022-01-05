@@ -17,7 +17,4 @@ anything you normally would with flashcards while being able to organize them in
 
 ![](Images/Study.png)
 
-### Creating Decks
-
-![](Images/Create-Deck.png)
 
