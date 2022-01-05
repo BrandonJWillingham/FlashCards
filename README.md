@@ -7,4 +7,4 @@ anything you normally would with flashcards while being able to organize them in
 
 ### Home page
 
-![](Images/home.png)
+![](Images/Home.png)
